@@ -1,5 +1,6 @@
 import string
 from random import choice
+import logging
 
 
 def getRandomChar(template: str) -> str:
@@ -9,6 +10,7 @@ def getRandomChar(template: str) -> str:
     elif len(template) < 1:
         return ""
     type = template[0]
+    logging.debug(f'generate random chars from template: {template}')
     if type == "a":
         return "".join([choice(string.ascii_lowercase) for i in range(k)])
     elif type == "A":
@@ -20,10 +22,12 @@ def getRandomChar(template: str) -> str:
     elif type == "@":
         return "".join(["@" for i in range(k)])
     else:
-        raise Exception("uncorrected template")
+        logging.warning(f'unknown template: "{template}" change to _')
+        return ""
 
 
 def genFromTemplate(template: str) -> str:
+    logging.info(f"get template: {template}")
     template = unpackTemplate(template)
     a = template.split("%")
     try:
@@ -47,4 +51,6 @@ def unpackTemplate(template: str) -> str:
         k = int(template[end+1])
     types = template[begin+1:end].split("%")
     types.remove("")
-    return template[:begin] + "%".join([choice(types) for _ in range(k)])+template[end+2:]
+    newtemplete = template[:begin] + "%".join([choice(types) for _ in range(k)])+template[end+2:]
+    logging.info(f"unpack template {template} to {newtemplete}")
+    return newtemplete
