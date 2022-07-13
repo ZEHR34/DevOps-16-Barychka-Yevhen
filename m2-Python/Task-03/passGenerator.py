@@ -21,10 +21,6 @@ parser.add_argument('-f', dest="file", type=argparse.FileType('r'),
 
 args = parser.parse_args()
 
-if args.file:
-    print(args.file.readlines())
-    args.file.close()
-
 #--------------------------
 if args.length:
     for j in range(args.count):
@@ -50,7 +46,7 @@ def getRandomChar(template: str) -> str:
     elif type == "@":
         return "".join(["@" for i in range(k)])
     else:
-        raise Exception("uncorect template")
+        raise Exception("uncorrected template")
 
 
 def genFromTemplate(template: str) -> str:
@@ -82,7 +78,17 @@ def unpackTemplate(template: str) -> str:
 
 
 if args.template:
-    print(genFromTemplate(args.template))
+    for i in range(args.count):
+        print(genFromTemplate(args.template))
+
+
+if args.file:
+    for i in args.file.readlines():
+        s = i.replace("\n", "")
+        print(f"{s}: {genFromTemplate(s)}")
+    args.file.close()
+
+
 
 # print("digits: "+string.digits)
 # print("punctuation: "+string.punctuation)
