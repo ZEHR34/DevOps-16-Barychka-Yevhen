@@ -1,0 +1,78 @@
+a87c806 HEAD@{0}: merge develop: Fast-forward
+4cad69a HEAD@{1}: checkout: moving from develop to main
+a87c806 HEAD@{2}: merge first: Fast-forward
+c7916bf HEAD@{3}: checkout: moving from first to develop
+a87c806 HEAD@{4}: rebase -i (finish): returning to refs/heads/first
+a87c806 HEAD@{5}: rebase -i (pick): change 3 file
+4fb6197 HEAD@{6}: rebase -i (squash): add 1 firle to first
+7837bcf HEAD@{7}: rebase -i (squash): # Це комбінація 2 комітів.
+02aa4c6 HEAD@{8}: rebase -i (pick): add 1 firle to first
+c7916bf HEAD@{9}: rebase -i (start): checkout develop
+a71ccf0 HEAD@{10}: checkout: moving from develop to first
+c7916bf HEAD@{11}: merge second: Fast-forward
+9d7abec HEAD@{12}: checkout: moving from second to develop
+c7916bf HEAD@{13}: rebase -i (finish): returning to refs/heads/second
+c7916bf HEAD@{14}: commit: second part of commit
+1495d49 HEAD@{15}: commit: first part of 1 commit
+1c07969 HEAD@{16}: reset: moving to HEAD^
+cdef2b8 HEAD@{17}: commit (amend): eddit 2 files
+123e296 HEAD@{18}: commit (amend): eddit 2 files
+0c46a17 HEAD@{19}: commit (amend): eddit 2 files
+531b6d8 HEAD@{20}: commit (amend): eddit 2 files
+4a2a675 HEAD@{21}: rebase -i (edit): eddit 2 files
+1c07969 HEAD@{22}: rebase -i (pick): add 2 second file
+e477218 HEAD@{23}: rebase -i (reword): chadd 1 second file Divide
+9e535c3 HEAD@{24}: rebase -i (reword): chadd 1 second file
+9d7abec HEAD@{25}: rebase -i (start): checkout develop
+467cc69 HEAD@{26}: commit: eddit 2 files
+0f913be HEAD@{27}: commit: add 2 second file
+a0aaa1b HEAD@{28}: commit: chadd 1 second file
+aafee3c HEAD@{29}: checkout: moving from first to second
+a71ccf0 HEAD@{30}: commit: change 3 file
+4b22eb9 HEAD@{31}: commit: change 1 and 2 file
+51f7d10 HEAD@{32}: commit: add 3 firle to first
+fa72ade HEAD@{33}: commit: add 2 firle to first
+cf6866e HEAD@{34}: commit: add 1 firle to first
+aafee3c HEAD@{35}: checkout: moving from develop to first
+9d7abec HEAD@{36}: commit: more file in develop branch
+aafee3c HEAD@{37}: checkout: moving from second to develop
+aafee3c HEAD@{38}: checkout: moving from first to second
+aafee3c HEAD@{39}: checkout: moving from develop to first
+aafee3c HEAD@{40}: commit: any file
+4cad69a HEAD@{41}: checkout: moving from main to develop
+4cad69a HEAD@{42}: merge develop: Fast-forward
+5700270 HEAD@{43}: checkout: moving from develop to main
+4cad69a HEAD@{44}: rebase finished: returning to refs/heads/develop
+4cad69a HEAD@{45}: rebase: add img2 to html
+5ffd0fe HEAD@{46}: revert: Revert "fix rebase conflict"
+57f87f1 HEAD@{47}: commit: fix rebase conflict
+e0b2077 HEAD@{48}: rebase: add img 2
+cebe0b4 HEAD@{49}: rebase: checkout styles2
+5ca666d HEAD@{50}: rebase finished: refs/heads/develop onto 5ca666d35c7d8a5f096fce887dcb5011c2f3dd23
+5ca666d HEAD@{51}: rebase: checkout images2
+5700270 HEAD@{52}: checkout: moving from styles2 to develop
+cebe0b4 HEAD@{53}: commit: change index.html - add text
+02d7e77 HEAD@{54}: commit: change css
+5700270 HEAD@{55}: checkout: moving from develop to styles2
+5700270 HEAD@{56}: checkout: moving from images2 to develop
+5ca666d HEAD@{57}: commit: add img2 to html
+bbcb5da HEAD@{58}: commit: add img 2
+5700270 HEAD@{59}: checkout: moving from develop to images2
+5700270 HEAD@{60}: checkout: moving from main to develop
+5700270 HEAD@{61}: merge develop: Fast-forward
+d77ed90 HEAD@{62}: checkout: moving from develop to main
+5700270 HEAD@{63}: commit (merge): fix merg conflict
+7046222 HEAD@{64}: checkout: moving from styles to develop
+d76384d HEAD@{65}: commit: add style to html
+0a3a9e0 HEAD@{66}: checkout: moving from develop to styles
+7046222 HEAD@{67}: merge images: Fast-forward
+d77ed90 HEAD@{68}: checkout: moving from develop to develop
+d77ed90 HEAD@{69}: checkout: moving from styles to develop
+0a3a9e0 HEAD@{70}: commit: style
+d77ed90 HEAD@{71}: checkout: moving from develop to styles
+d77ed90 HEAD@{72}: checkout: moving from images to develop
+7046222 HEAD@{73}: commit: img
+d77ed90 HEAD@{74}: checkout: moving from develop to images
+d77ed90 HEAD@{75}: checkout: moving from main to develop
+d77ed90 HEAD@{76}: commit: add readmi.txt
+019cccf HEAD@{77}: clone: from https://gitlab.com/firstgrup1/testGitLab
