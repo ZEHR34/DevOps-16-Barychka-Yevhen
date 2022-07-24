@@ -1,0 +1,36 @@
+4cad69a HEAD@{0}: merge develop: Fast-forward
+5700270 HEAD@{1}: checkout: moving from develop to main
+4cad69a HEAD@{2}: rebase finished: returning to refs/heads/develop
+4cad69a HEAD@{3}: rebase: add img2 to html
+5ffd0fe HEAD@{4}: revert: Revert "fix rebase conflict"
+57f87f1 HEAD@{5}: commit: fix rebase conflict
+e0b2077 HEAD@{6}: rebase: add img 2
+cebe0b4 HEAD@{7}: rebase: checkout styles2
+5ca666d HEAD@{8}: rebase finished: refs/heads/develop onto 5ca666d35c7d8a5f096fce887dcb5011c2f3dd23
+5ca666d HEAD@{9}: rebase: checkout images2
+5700270 HEAD@{10}: checkout: moving from styles2 to develop
+cebe0b4 HEAD@{11}: commit: change index.html - add text
+02d7e77 HEAD@{12}: commit: change css
+5700270 HEAD@{13}: checkout: moving from develop to styles2
+5700270 HEAD@{14}: checkout: moving from images2 to develop
+5ca666d HEAD@{15}: commit: add img2 to html
+bbcb5da HEAD@{16}: commit: add img 2
+5700270 HEAD@{17}: checkout: moving from develop to images2
+5700270 HEAD@{18}: checkout: moving from main to develop
+5700270 HEAD@{19}: merge develop: Fast-forward
+d77ed90 HEAD@{20}: checkout: moving from develop to main
+5700270 HEAD@{21}: commit (merge): fix merg conflict
+7046222 HEAD@{22}: checkout: moving from styles to develop
+d76384d HEAD@{23}: commit: add style to html
+0a3a9e0 HEAD@{24}: checkout: moving from develop to styles
+7046222 HEAD@{25}: merge images: Fast-forward
+d77ed90 HEAD@{26}: checkout: moving from develop to develop
+d77ed90 HEAD@{27}: checkout: moving from styles to develop
+0a3a9e0 HEAD@{28}: commit: style
+d77ed90 HEAD@{29}: checkout: moving from develop to styles
+d77ed90 HEAD@{30}: checkout: moving from images to develop
+7046222 HEAD@{31}: commit: img
+d77ed90 HEAD@{32}: checkout: moving from develop to images
+d77ed90 HEAD@{33}: checkout: moving from main to develop
+d77ed90 HEAD@{34}: commit: add readmi.txt
+019cccf HEAD@{35}: clone: from https://gitlab.com/firstgrup1/testGitLab
