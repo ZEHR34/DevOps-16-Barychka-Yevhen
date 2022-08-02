@@ -24,21 +24,13 @@ def in_filter(row: dict, regulars:[str]) -> bool:
     if not regulars:
         return True
     for i in regulars:
-        fild, reg = i.split("=")
-        if not fullmatch(reg, row[fild]):
-            # print(fild,reg,"**********************")
+        field, reg = i.split("=")
+        if not fullmatch(reg, row[field]):
             return False
-        # print(fild, reg)
     return True
 
 
 parser = argparse.ArgumentParser()
-
-# parser.add_argument('-c', dest="count", default=1, type=int,
-#                     help='number of passwords')
-#
-# parser.add_argument('-l', dest="length", type=int,
-#                     help='set length of password ')
 
 parser.add_argument('-s', dest="field", nargs='+',
                     help='set field to use')
@@ -55,47 +47,35 @@ parser.add_argument('-f', dest="file", type=str, required=True,
 parser.add_argument('-e', dest="export_file", type=str,
                     help='csv file for export')
 
-# parser.add_argument('-v', dest="verbose", action='count', default=0)
-
 args = parser.parse_args()
-
-# parser.add_argument('--head', dest="heading", default=1, type=bool,
-#                     help='head in csv file of passwords')
-
-
-
-# ./csvParser.py -s hostname IPv4 user_name -r 1-3 -f file.csv -t user_name=User01 'IPv4=172.16.48.10\d'
-# print(args.file)
 file_name = args.file
 keys = args.field
-print(keys)
-# exit()
+select_ranges = args.range
+export_file = args.export_file
+reg = args.reg
 
-# print(args.reg)
-
-
+# filter data and extract to array
+a = []
 with open(file_name) as csvfile:
     reader = csv.DictReader(csvfile, quotechar="'")
     if not keys:
         keys = reader.fieldnames
-    b = reader.fieldnames
-    a = []
     i = 0
     for row in reader:
         i += 1
-        # print(row["user_name"] + str(in_filter(row, args.reg)))
-        if in_range(args.range, i) and in_filter(row, args.reg):
+        if in_range(select_ranges, i) and in_filter(row, reg):
             a.append([row[j] for j in keys])
 
-for i in a: print(i)
-data = [dict(zip(keys, i)) for i in a]
-print(data)
-print(keys)
-if args.export_file:
-    with open(args.export_file, "w") as file:
+# export data to file or print
+if export_file:
+    data = [dict(zip(keys, i)) for i in a]
+    with open(export_file, "w") as file:
         writer = csv.DictWriter(file, fieldnames=keys, quotechar="'")
         writer.writeheader()
         writer.writerows(data)
+else:
+    print(keys)
+    for i in a:
+        print(i)
 
 # ./csvParser.py -s hostname IPv4 user_name -r 1-3 -f file.csv -t 'user_name=User0\d' 'IPv4=172.16.48.10[12]' -e test.csv
-
