@@ -54,8 +54,8 @@ do
 done
 
 
-# 7
+# 7-8
 ffile='test/f1'
+echo
 ls $ffile
 find -L  -samefile $ffile 2>/dev/null
-#find -L / -samefile test/f1 2>/dev/null
