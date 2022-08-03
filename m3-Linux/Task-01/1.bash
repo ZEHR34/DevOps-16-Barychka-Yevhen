@@ -61,7 +61,7 @@ echo посилання на $ffile
 ls $ffile
 find -L  -samefile $ffile 2>/dev/null
 
-# 9
+# 9-10
 finode=1055356
 echo
 echo розташування файлу з inode $finode
