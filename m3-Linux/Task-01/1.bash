@@ -14,3 +14,8 @@ fgroup=root
 echo файли колристувача $fuser і групи $fgroup
 find  -group $fgroup -user $fuser
 
+#3
+echo
+echo скрипти
+find -iname "*.bash"
+
