@@ -85,3 +85,14 @@ do
 done
 echo видалено t1 t2 t3
 ls $fdir -i
+
+# 12
+fdir="test"
+fmod=333
+echo
+files=`ls $fdir -p | grep -v /`
+for i in $files
+do
+  chmod $fmod "$fdir/$i"
+done
+echo змінено прова на $fmod у дерикторії $fdir
