@@ -14,14 +14,23 @@ fgroup=root
 echo файли користувача $fuser і групи $fgroup
 find  -group $fgroup -user $fuser
 
-#3
+# 3
 echo
 echo скрипти
 find -iname "*.bash"
 
-#4
-echo
+# 4
 fuser=entropia
+echo
 echo скрипти користувача $fuser
 find -iname "*.bash" -user $fuser
+
+# 5
+ftype="txt"
+ftext="text"
+echo
+echo файли $ftype які місять  $ftext
+ftype='*.'$ftype
+find . -name "$ftype" -exec grep -i "$ftext" {} \; -print
+
 
