@@ -11,11 +11,17 @@ done
 # 2
 fuser=entropia
 fgroup=root
-echo файли колристувача $fuser і групи $fgroup
+echo файли користувача $fuser і групи $fgroup
 find  -group $fgroup -user $fuser
 
 #3
 echo
 echo скрипти
 find -iname "*.bash"
+
+#4
+echo
+fuser=entropia
+echo скрипти користувача $fuser
+find -iname "*.bash" -user $fuser
 
