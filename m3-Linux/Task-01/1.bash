@@ -33,4 +33,22 @@ echo файли $ftype які місять  $ftext
 ftype='*.'$ftype
 find . -name "$ftype" -exec grep -i "$ftext" {} \; -print
 
-
+# 6
+function myfunc {
+  size1=`ls -l $1 | awk '{print $5}'`
+  size2=`ls -l $2 | awk '{print $5}'`
+  if (( $size1==$size2 )) && [[ "$1" != "$2" ]]; then
+    if [[ `md5sum $1 | awk '{print $1}'` = `md5sum $2 | awk '{print $1}'` ]]; then
+      echo same file $1 and $2
+    fi
+  fi
+}
+echo
+fdir=`ls -p | grep -v /`
+for i in $fdir
+do
+  for j in $fdir
+  do
+    myfunc $i $j
+  done
+done
