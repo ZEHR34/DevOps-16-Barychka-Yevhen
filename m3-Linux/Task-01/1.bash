@@ -52,3 +52,10 @@ do
     myfunc $i $j
   done
 done
+
+
+# 7
+ffile='test/f1'
+ls $ffile
+find -L  -samefile $ffile 2>/dev/null
+#find -L / -samefile test/f1 2>/dev/null
