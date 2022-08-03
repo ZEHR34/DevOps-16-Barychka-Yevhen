@@ -8,3 +8,9 @@ do
   echo $g >> groups.txt
 done
 
+# 2
+fuser=entropia
+fgroup=root
+echo файли колристувача $fuser і групи $fgroup
+find  -group $fgroup -user $fuser
+
