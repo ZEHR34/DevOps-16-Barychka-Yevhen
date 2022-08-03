@@ -66,3 +66,22 @@ finode=1055356
 echo
 echo розташування файлу з inode $finode
 find -inum $finode 2> /dev/null
+
+# 11
+echo
+fdir='test'
+cd $fdir
+touch "t1"
+ln -s t1 t2
+ln t1 t3
+cd '../'
+echo створено t1 t2 t3
+ls $fdir -i
+ffile='test/f1'
+fdell=`find -L  -samefile "$fdir/t1" 2>/dev/null`
+for i in $fdell
+do
+  rm $i
+done
+echo видалено t1 t2 t3
+ls $fdir -i
