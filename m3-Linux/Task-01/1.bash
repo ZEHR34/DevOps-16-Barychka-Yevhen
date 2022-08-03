@@ -57,5 +57,12 @@ done
 # 7-8
 ffile='test/f1'
 echo
+echo посилання на $ffile
 ls $ffile
 find -L  -samefile $ffile 2>/dev/null
+
+# 9
+finode=1055356
+echo
+echo розташування файлу з inode $finode
+find -inum $finode 2> /dev/null
