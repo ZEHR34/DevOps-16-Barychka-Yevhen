@@ -28,7 +28,7 @@ do
 done
 rm -r testlfInks testf -r
 
-# 19
+# 19-20
 mkdir test
 echo 123 > test/1
 ln -s ../test/1 test/2
