@@ -27,3 +27,11 @@ do
   ln -s ../$pathf/$i testlfInks/$i
 done
 rm -r testlfInks testf -r
+
+# 19
+mkdir test
+echo 123 > test/1
+ln -s ../test/1 test/2
+ln test/1 test/3
+cp -rL test testL
+rm -r test testL
