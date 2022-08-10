@@ -52,10 +52,17 @@ for i in `find ! -name . -prune -type l`; do
   rm "$i"
 done
 
-# 25
+ 25
 touch 1
 touch 2
 tar -cf 1.tar 1 2
 rm 1 2
 tar -xf 1.tar 1
 rm 1.tar 1
+
+# 26
+tar -cvpf 1.tar 1
+
+# 27
+find ./1 -type d -links 2 -exec mkdir -p "backup/{}" \;
+
