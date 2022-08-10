@@ -68,3 +68,6 @@ find ./1 -type d -links 2 -exec mkdir -p "backup/{}" \;
 
 # 28
 awk -F: '{ print $1}' /etc/passwd | sort
+
+# 29
+awk -F: '{ print $3 "  " $1}' /etc/passwd | sort -n
