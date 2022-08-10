@@ -46,3 +46,8 @@ find . -type l | while read l; do
     target="$(realpath "$l")"
     ln -fs "$(realpath --relative-to="$(dirname "$(realpath -s "$l")")" "$target")" "$l"
 done
+
+# 24
+for i in `find ! -name . -prune -type l`; do
+  rm "$i"
+done
