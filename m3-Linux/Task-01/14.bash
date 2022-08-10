@@ -78,3 +78,7 @@ awk -F: '{ print $3 "  " $1}' /etc/passwd | sort -nr
 # 31
 grep nologin /etc/passwd | awk -F: '{ print $3 "  " $1}' | sort -n
 grep -v nologin /etc/passwd | awk -F: '{ print $3 "  " $1}' | sort -n
+
+# 32
+grep '/bash\|/sh\|/zsh' /etc/passwd
+grep -v '/bash\|/sh\|/zsh' /etc/passwd
