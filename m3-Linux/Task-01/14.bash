@@ -35,3 +35,14 @@ ln -s ../test/1 test/2
 ln test/1 test/3
 cp -rLp test testL
 rm -r test testL
+
+# 22
+for i in `find ! -name . -prune -type l`; do
+  ln -sf "$(readlink -f "$i")" "$i"
+done
+
+#23
+find . -type l | while read l; do
+    target="$(realpath "$l")"
+    ln -fs "$(realpath --relative-to="$(dirname "$(realpath -s "$l")")" "$target")" "$l"
+done
