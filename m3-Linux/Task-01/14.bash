@@ -66,3 +66,5 @@ tar -cvpf 1.tar 1
 # 27
 find ./1 -type d -links 2 -exec mkdir -p "backup/{}" \;
 
+# 28
+awk -F: '{ print $1}' /etc/passwd | sort
