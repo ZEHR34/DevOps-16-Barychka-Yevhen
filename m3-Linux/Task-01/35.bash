@@ -19,6 +19,6 @@ curl ifconfig.me
 echo
 hostname -I | awk '{print $1}'
 
-# 37?-38
+# 37?-38-39
 nmap -sn 192.168.1.*|grep 'Nmap scan'
 sudo arp-scan --localnet
