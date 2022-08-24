@@ -1,0 +1,13 @@
+curl -v 192.168.1.254
+
+> Host: 192.168.1.254     - адреса на яку призначений запит
+> User-Agent: curl/7.74.0 - програма яка виконує запит
+> Accept: */*             - типи контенту які приймаються у відповідь
+
+< Date: Wed, 24 Aug 2022 16:25:25 GMT
+< Server: Boa/0.94.14rc21                                                       - програма сервер яка обробита запит
+< Connection: close                                                             - стан сесії для подальшої передачі даних
+< WWW-Authenticate: Digest realm="N4", nonce="V2VkIEF1ZyAyNCAxNjoyNToyNSAyMDIy" - інформація для авторизації
+< Content-Type: text/html; charset=ISO-8859-1                                   - інформація про відповідь
+
+
