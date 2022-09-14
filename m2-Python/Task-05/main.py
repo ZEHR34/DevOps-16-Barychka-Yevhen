@@ -91,3 +91,12 @@ for i in f.readlines():
     dict_incrase(workers, j)
 print_top(workers, 5)
 f.seek(0)
+
+print()
+print("5 найчастіших переходів")
+redirects = dict()
+for i in f.readlines():
+    j = re.findall(r'\"[A-Za-z0-9,;\(\)_/ \\.:\?=&+%#!\-]*\"', i)[1]
+    dict_incrase(redirects,j)
+print_top(redirects,5)
+f.seek(0)
