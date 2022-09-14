@@ -100,3 +100,85 @@ for i in f.readlines():
     dict_incrase(redirects,j)
 print_top(redirects,5)
 f.seek(0)
+
+
+def time_round(time: str, quant:int) -> str:
+    minutest = time.split(":")[-2:]
+    sec = int(minutest[1])+60*int(minutest[0])
+    time_step=[0, 0]
+    min=sec//quant*quant
+    time_step[0] = str(min // 60)
+    if len(time_step[0])==1:
+        time_step[0]="0"+time_step[0]
+    time_step[1] = str(min % 60)
+    if len(time_step[1])==1:
+        time_step[1]="0"+time_step[1]
+    unsver = ":".join( time.split(":")[:-2]+time_step )
+    return unsver
+
+
+print()
+print("5 найчастіших воркерів в період 5хв")
+timeWorker = dict()
+for i in f.readlines():
+    j = re.findall(r'\"[A-Za-z0-9,;\(\)_/ \\.:\?=&+%#!\-]*\"', i)[-1]
+    t = re.findall(r'08/Oct/2015:\d\d:\d\d:\d\d',i)[0]
+    t = time_round(t, 60*5)
+    dict_incrase(timeWorker, t+" "+j)
+print_top(timeWorker, 5)
+f.seek(0)
+
+
+print()
+print("5 найчастіших воркерів в період 1хв")
+timeWorker = dict()
+for i in f.readlines():
+    j = re.findall(r'\"[A-Za-z0-9,;\(\)_/ \\.:\?=&+%#!\-]*\"', i)[-1]
+    t = re.findall(r'08/Oct/2015:\d\d:\d\d:\d\d',i)[0]
+    t = time_round(t, 60)
+    dict_incrase(timeWorker, t+" "+j)
+print_top(timeWorker, 5)
+f.seek(0)
+
+
+print()
+print("5 найчастіших воркерів в період 30c")
+timeWorker = dict()
+for i in f.readlines():
+    j = re.findall(r'\"[A-Za-z0-9,;\(\)_/ \\.:\?=&+%#!\-]*\"', i)[-1]
+    t = re.findall(r'08/Oct/2015:\d\d:\d\d:\d\d',i)[0]
+    t = time_round(t, 30)
+    dict_incrase(timeWorker, t+" "+j)
+print_top(timeWorker, 5)
+f.seek(0)
+
+
+print()
+print("найбільше запитів за 1хв")
+timeQuests = dict()
+for i in f.readlines():
+    t = re.findall(r'08/Oct/2015:\d\d:\d\d:\d\d',i)[0]
+    t = time_round(t, 60)
+    dict_incrase(timeQuests, t)
+print_top(timeQuests, 5)
+f.seek(0)
+
+print()
+print("найбільше запитів за 2хв")
+timeQuests = dict()
+for i in f.readlines():
+    t = re.findall(r'08/Oct/2015:\d\d:\d\d:\d\d',i)[0]
+    t = time_round(t, 60*2)
+    dict_incrase(timeQuests, t)
+print_top(timeQuests, 5)
+f.seek(0)
+
+print()
+print("найбільше запитів за 3хв")
+timeQuests = dict()
+for i in f.readlines():
+    t = re.findall(r'08/Oct/2015:\d\d:\d\d:\d\d',i)[0]
+    t = time_round(t, 60*3)
+    dict_incrase(timeQuests, t)
+print_top(timeQuests, 5)
+f.seek(0)
