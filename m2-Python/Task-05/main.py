@@ -12,7 +12,7 @@ def print_top(dict: dict, n: int):
         print(f'{top[i][0]}\t{top[i][1]}')
 
 
-f = open("access_log.shot","r")
+f = open("access_log", "r")
 
 print()
 print("5 найчастіших ip")
@@ -62,9 +62,32 @@ print()
 print("5 накорочих запитів")
 queset=[]
 for i in f.readlines():
-    j = re.findall(r'\"[A-Za-z0-9,;\(\)_/ \\.:\?=&+%#\-]*\"', i)[0]
-    queset.append(j)
-    queset.sort(key=lambda x:len(x))
-    queset=queset[:5]
+    j = re.findall(r'\"[A-Za-z0-9,;\(\)_/ \\.:\?=&+%#!\-]*\"', i)[0]
+    if not (j in queset):
+        queset.append(j)
+        queset.sort(key=lambda x:len(x))
+        queset=queset[:5]
 print("\n".join(queset))
+f.seek(0)
+
+
+print()
+print("5 найчастіших запитів з точністю до 2-ого /")
+quests_url=dict()
+for i in f.readlines():
+    j = re.findall(r'\"[A-Za-z0-9,;\(\)_/ \\.:\?=&+%#\-]*\"', i)[0]
+    j = j.split("/")[1:3]
+    j = "/".join(j)
+    dict_incrase(quests_url, j)
+print_top(quests_url, 5)
+f.seek(0)
+
+
+print()
+print("5 найактивніших воркерів")
+workers=dict()
+for i in f.readlines():
+    j = re.findall(r'\"[A-Za-z0-9,;\(\)_/ \\.:\?=&+%#\-]*\"', i)[-1]
+    dict_incrase(workers, j)
+print_top(workers, 5)
 f.seek(0)
